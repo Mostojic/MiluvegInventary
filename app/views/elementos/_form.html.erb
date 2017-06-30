@@ -1,0 +1,32 @@
+<%= form_with(model: elemento, local: true) do |form| %>
+  <% if elemento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(elemento.errors.count, "error") %> prohibited this elemento from being saved:</h2>
+
+      <ul>
+      <% elemento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Insumo_id %>
+    <%= form.text_field :Insumo_id, id: :elemento_Insumo_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.number_field :cantidad, id: :elemento_cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vencimiento %>
+    <%= form.date_select :vencimiento, id: :elemento_vencimiento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

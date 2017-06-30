@@ -1,0 +1,32 @@
+<%= form_with(model: insumo, local: true) do |form| %>
+  <% if insumo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(insumo.errors.count, "error") %> prohibited this insumo from being saved:</h2>
+
+      <ul>
+      <% insumo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Medida_id %>
+    <%= form.text_field :Medida_id, id: :insumo_Medida_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :insumo_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.number_field :precio, id: :insumo_precio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

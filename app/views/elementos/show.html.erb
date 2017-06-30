@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Insumo:</strong>
+  <%= @elemento.Insumo %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @elemento.cantidad %>
+</p>
+
+<p>
+  <strong>Vencimiento:</strong>
+  <%= @elemento.vencimiento %>
+</p>
+
+<%= link_to 'Edit', edit_elemento_path(@elemento) %> |
+<%= link_to 'Back', elementos_path %>

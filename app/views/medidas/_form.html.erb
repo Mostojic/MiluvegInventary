@@ -1,0 +1,22 @@
+<%= form_with(model: medida, local: true) do |form| %>
+  <% if medida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medida.errors.count, "error") %> prohibited this medida from being saved:</h2>
+
+      <ul>
+      <% medida.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :medida_nombre %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
